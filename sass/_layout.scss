@@ -1,0 +1,448 @@
+@use './mixins' as *;
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* スムーススクロール */
+}
+
+//ヘッダー
+//上部---------------------------------
+
+.header {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--black);
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .header {
+        height: 72px;
+    }
+}
+
+//黒部分---------------------------------
+
+.acount-link {
+    background-color: black;
+    height: 40px;
+    width: 100vw;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+.acount-link:hover {
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .acount-link {
+        font-size: 9px;
+        height: 30px;
+        letter-spacing: 0em;
+        padding: 8px;
+    }
+}
+
+
+//ハンバーガーメニュー
+.menu-btn {
+    position: fixed;
+    top: 40px;
+    right: 4rem;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    //    background-color: #3584bb;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 30px;
+    border-radius: 1px;
+    background-color: var(--black);
+    position: absolute;
+}
+
+.menu-btn span:before {
+    bottom: 10px;
+}
+
+.menu-btn span:after {
+    top: 10px;
+}
+
+#menu-btn-check:checked~.menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked~.menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#menu-btn-check:checked~.menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .menu-btn {
+        top: 22px;
+        right: 1rem;
+    }
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    /*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.4s ease-in-out;
+    /*アニメーション設定*/
+    text-align: center;
+    align-items: center;
+}
+
+.menu-content ul {
+    padding: 200px 0 10px 0;
+}
+
+.menu-content ul li {
+    //    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+
+.menu-content ul li a {
+    display: block;
+    margin: auto 0;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    box-sizing: border-box;
+    color: var(--black);
+    text-decoration: none;
+    padding-bottom: 24px;
+    position: relative;
+}
+
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.menu-content ul li a:hover {
+    opacity: 0.2;
+    transition: 0.2s;
+}
+
+#menu-btn-check:checked~.menu-content {
+    left: 0;
+    /*メニューを画面内へ*/
+}
+
+
+
+//ロゴ部分---------------------------------
+.logo {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+.logo img {
+    width: 116px;
+    object-fit: cover;
+    /* padding: 2em; */
+}
+
+.logo a:hover {
+    opacity: 0.2;
+    transition: 0.2s;
+}
+
+@media (max-width: 768px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .logo {
+        margin-left: 1rem;
+        height: 48px;
+    }
+
+    .logo img {
+        width: 72px;
+        object-fit: cover;
+        /* padding: 2em; */
+    }
+}
+
+
+//メニュー部分---------------------------------
+.sp-only {
+    display: none;
+    //飯場がメニュ
+}
+
+
+//トップ画像---------------------------------
+.top {
+    display: flex;
+    height: 880px;
+}
+
+@media (max-width: 1024px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .top {
+        height: 100%;
+        width: 100vw;
+    }
+}
+
+
+
+.top-img {
+    width: 100vw;
+    object-fit: cover;
+    height: 100vh;
+
+    background: url(../img/Weekend_OakBrown3.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    z-index: -1;
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .top-img {
+        height: 620px;
+        width: 100vw;
+    }
+}
+
+
+
+
+//topナビ------------------------------
+
+.pc-only {
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    left: 6rem;
+    bottom: 4rem;
+    z-index: 10;
+}
+
+.pc-only ul {
+    margin-bottom: 8px;
+}
+
+.pc-only a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+}
+
+.pc-only a:hover {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+@media screen and (max-width:1200px) {
+    .pc-only {
+        display: none;
+    }
+}
+
+
+
+
+//topコメント------------------------------
+
+.top-massege {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+}
+
+
+//sclorrdown------------------------------
+
+.scrolldown {
+    display: block;
+    margin-top: 210px;
+}
+
+.yazirusi-down {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 40px;
+    margin: 0 auto;
+    transform: rotate(90deg);
+}
+
+.line01_down {
+    height: 2px;
+    background-color: #fff;
+}
+
+.line02_down {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: right bottom;
+    width: 8px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.scrolldown-text {
+    display: block;
+    width: 200px;
+    height: 20px;
+    margin: 0 auto;
+    font-weight: bold;
+    padding-bottom: 60px;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+}
+
+
+.top-massege_sp-only {
+    display: none;
+}
+
+.top-massege h1 {
+    font-size: 100px;
+    color: var(--yellow);
+    line-height: 120%
+}
+
+
+@media screen and (max-width:768px) {
+    .top-massege {
+        display: none;
+    }
+
+    .top-massege_sp-only {
+        display: block;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 50%;
+    }
+
+    .top-massege_sp-only h1 {
+        font-size: 48px;
+        color: var(--yellow);
+        line-height: 120%
+    }
+}
+
+
+//購入アイコン--------------------------------
+
+.buy-icon {
+    display: inline-block;
+    position: absolute;
+    position: fixed;
+    bottom: 4rem;
+    right: 6rem;
+    width: 160px;
+    height: 88px;
+    color: var(--yellow);
+    background-color: var(--main);
+    line-height: 180%;
+    text-align: center;
+    border-radius: 50%;
+    align-content: center;
+
+    text-decoration: none;
+    color: var(--yellow);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+
+    z-index: 100;
+}
+
+.buy-icon span {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.buy-icon:hover {
+    transform: scale(0.9);
+    background: var(--link);
+    transition: 0.1s;
+}
+
+@media (max-width: 768px) {
+
+    /* 幅が768px以下のときに適用するスタイルをここに記述します */
+    .buy-icon {
+        width: 140px;
+        height: 72px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}

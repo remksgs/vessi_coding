@@ -1,0 +1,502 @@
+@use './mixins' as *;
+
+.review {
+    max-width: 60vw;
+    margin: 0 auto;
+    padding: 0 30px;
+    margin-top: 240px;
+}
+
+.service {
+    max-width: 60vw;
+    margin: 0 auto;
+    padding: 0 30px;
+    padding-top: 200px;
+}
+
+.faq {
+    max-width: 60vw;
+    margin: 0 auto;
+    padding: 0 30px;
+    padding-top: 200px;
+    padding-bottom: 0;
+}
+
+.SUB-title {
+    color: var(--black);
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.SUB-copy {
+    color: var(--black);
+    font-size: 20px;
+    padding-right: 16px;
+    letter-spacing: 0.3em;
+}
+
+.SUB-sub {
+    color: var(--black);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.SUB-link__pc-only {
+    margin: 0 0 0 auto;
+    display: flex;
+    width: 140px;
+    height: 32px;
+    background: var(--basedark);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.SUB-link__pc-only a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+
+.SUB-link:hover {
+    transform: scale(1.1);
+    background: var(--yellow);
+}
+
+.SUB-link__sp-only {
+    display: none;
+}
+
+
+@media screen and (max-width:768px) {
+
+    .review {
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 0;
+        margin-top: 160px;
+    }
+
+    .service {
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 0 30px;
+        margin-top: 160px;
+    }
+
+    .faq {
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 0;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .SUB-title {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .SUB-copy {
+        text-align: center;
+        font-size: 16px;
+        padding-right: 0;
+    }
+
+    .SUB-sub {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .SUB-link__pc-only {
+        display: none;
+    }
+
+    .SUB-link__sp-only {
+        margin: 0 auto;
+        display: flex;
+        width: 70vw;
+        height: 32px;
+        background: var(--basedark);
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .SUB-link__sp-only a {
+        color: var(--link);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        font-size: 11px;
+    }
+}
+
+
+
+//review
+
+.reviews {
+    padding-top: 48px;
+    align-items: center;
+}
+
+.reviews ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.reviews li {
+    background-color: var(--baseusui);
+    flex: 1;
+    //    border: 2px solid var(--link);
+    padding: 48px;
+}
+
+.reviews h3 {
+    color: var(--main);
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    padding-bottom: 24px;
+}
+
+.review-date {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 180%;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.review-date a {
+    color: var(--main);
+    text-decoration: 2px underline var(--main);
+}
+
+.review-date a:hover {
+    text-decoration: none;
+    color: var(--link);
+}
+
+.review-text {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    line-height: 180%;
+}
+
+@media screen and (max-width:768px) {
+
+    .reviews {
+        margin: 24px 0 24px 0;
+        padding-top: 0;
+        align-items: center;
+    }
+
+    .reviews ul {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .reviews li {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .reviews h3 {
+        padding-bottom: 16px;
+        font-size: 14px;
+    }
+
+    .review-date {
+        font-size: 9px;
+        padding-bottom: 16px;
+    }
+
+    .review-text {
+        font-size: 10px;
+        line-height: 160%;
+    }
+
+
+}
+
+
+//service
+
+.service-cards {
+    padding-top: 48px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 32px
+}
+
+.service-card {
+    flex: 1;
+    //    width: 320px;
+}
+
+.service-card img {
+    padding-bottom: 16px;
+}
+
+.service-card h3 {
+    color: var(--main);
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    line-height: 140%;
+    padding-bottom: 16px;
+}
+
+.service-card-text {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    line-height: 180%;
+    
+}
+
+.service-info {
+    text-align: center;
+    margin-top: 64px;
+    align-items: center;
+}
+
+.service-info p {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 8px;
+    border: solid 1px var(--main);
+    width: 640px;
+    margin: 0 auto;
+    border-radius: 16px;
+}
+
+.service-info p a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--link);
+}
+
+.service-info p a:hover {
+    color: var(--main);
+}
+
+@media screen and (max-width:768px) {
+
+    .service {
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 0;
+        padding-top: 100px;
+    }
+
+    .service-cards {
+        margin-top: 24px;
+        padding: 0;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+    .service-card {
+        background: var(--baseusui);
+        flex-direction: row;
+        //        background: #fff;
+        width: 90vw;
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+
+    .service-card img {
+        padding-bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+        line-height: 140%;
+        padding-bottom: 8px;
+
+    }
+
+    .service-card-text {
+        font-size: 11px;
+        line-height: 160%;
+        width: 74vw;
+        margin: 0 auto;
+        text-align: start;
+    }
+
+    .service-info {
+        text-align: center;
+        margin-top: 16px;
+        align-items: center;
+    }
+
+    .service-info p {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        padding: 0;
+        border: 0px;
+        width: 90vw;
+        margin: 0 auto;
+        border-radius: 0;
+        text-align: start;
+    }
+
+}
+
+
+//FAQ
+
+.faqs {
+    margin-top: 48px;
+    align-items: center;
+
+}
+
+.accordion {
+    margin: 3em auto;
+    max-width: 60vw;
+}
+
+.toggle {
+    display: none;
+}
+
+.option {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.title,
+.content {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: all 0.6s;
+}
+
+.title {
+    //border: solid 1px #ccc;
+    background: var(--main);
+    padding: 1em;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.title::after,
+.title::before {
+    content: "";
+    position: absolute;
+    right: 1.25em;
+    top: 1.25em;
+    width: 1px;
+    height: 0.75em;
+    background-color: var(--yellow);
+    transition: all 0.4s;
+}
+
+.title::after {
+    transform: rotate(90deg);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    background: var(--baseusui);
+    max-height: 0;
+    overflow: hidden;
+}
+
+.answer {
+    display: block;
+    padding: 0.5em;
+    font-weight: bold;
+    color: var(--main);
+}
+
+.content p {
+    margin: 0;
+    padding: 0.5em 1em 1em;
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+}
+
+.content span {
+    display: block;
+    margin: 4px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--main);
+    letter-spacing: 0.1em;
+}
+
+.toggle:checked+.title+.content {
+    max-height: 500px;
+    transition: all 1.8s;
+}
+
+.toggle:checked+.title::before {
+    transform: rotate(90deg) !important;
+}
+
+@media screen and (max-width:768px) {
+
+    .accordion {
+        margin: 24px 0;
+        max-width: 90vw;
+    }
+
+    .title {
+        padding: 1em;
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+    }
+
+    .answer {
+        padding: 0.2em;
+    }
+
+    .content span {
+        font-size: 12px;
+    }
+}
+
+.sub___img___footer {
+    height: 200px;
+    width: 100vw;
+}
+
+.sub_splash {
+    width: 340px;
+    display: block;
+    object-fit: cover;
+    transform: rotate(10deg);
+    opacity: 0.8;
+}
+
+@media screen and (max-width:768px) {
+    .sub___img___footer {
+        height: 80px;
+        width: 100vw;
+    }
+
+    .sub_splash {
+        width: 140px;
+        display: block;
+        object-fit: cover;
+        transform: rotate(10deg);
+        opacity: 0.8;
+    }
+}

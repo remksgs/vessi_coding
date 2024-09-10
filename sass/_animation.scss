@@ -1,0 +1,445 @@
+@use './mixins' as *;
+
+//top-------------------------
+//トップのアニメーション
+
+//ヘッダー上部の徐々に出てくるアニメーション ※要検討
+/*
+.acount {
+    transition: 0.2s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+.acount.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+*/
+
+
+//スクロール↓が点滅するアニメーション
+.scrolldown {
+    -webkit-animation: blink 1s ease-in-out infinite alternate;
+    -moz-animation: blink 1s ease-in-out infinite alternate;
+    animation: blink 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+//topページの画像が横から出てくるアニメーション
+.top-img__container {
+    opacity: 0;
+}
+
+.top-img__container {
+    animation: img-opacity 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    overflow: hidden;
+    position: relative;
+}
+
+.top-img__container::before {
+    animation: img-animation 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: #fff;
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes img-opacity {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes img-animation {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+//topのテキスト横から出る動き
+/* animation */
+@-webkit-keyframes top-massege__passing-bar {
+    0% {
+        left: 0;
+        right: auto;
+        width: 0;
+    }
+
+    50% {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+
+    51% {
+        left: auto;
+        right: 0;
+        width: 100%;
+    }
+
+    100% {
+        left: auto;
+        right: 0;
+        width: 0;
+    }
+}
+
+@keyframes top-massege__passing-bar {
+    0% {
+        left: 0;
+        width: 0;
+    }
+
+    50% {
+        left: 0;
+        width: 100%;
+    }
+
+    51% {
+        left: 0;
+        width: 100%;
+    }
+
+    100% {
+        left: 100%;
+        width: 0;
+    }
+}
+
+@-webkit-keyframes top-massege__passing-txt {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes top-massege__passing-txt {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* css */
+.top-massege__passing .top-massege__passing-box {
+    display: block;
+    text-align: center;
+}
+
+.top-massege__passing .top-massege__passing-bar {
+    position: relative;
+    display: inline-block;
+    /*　後ほど解説　*/
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.top-massege__passing .top-massege__passing-bar:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    /* 任意の値 */
+    background: var(--yellow);
+}
+
+.top-massege__passing .top-massege__passing-txt {
+    opacity: 0;
+    /* 後ほど解説 */
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* 任意の値 */
+    font-size: 4.0rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.top-massege__passing.move .top-massege__passing-bar:before {
+    -webkit-animation: top-massege__passing-bar 1s ease 0s 1 normal forwards;
+    animation: top-massege__passing-bar 1s ease 0s 1 normal forwards;
+}
+
+.top-massege__passing.move .top-massege__passing-txt {
+    -webkit-animation: top-massege__passing-txt 0s ease .5s 1 normal forwards;
+    animation: top-massege__passing-txt 0s ease .5s 1 normal forwards;
+}
+
+
+
+//concept----------------------------------
+
+//コンセプトのアニメーション
+.concept_title_img {
+    transition: 1.4s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.concept_title_img.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+//コンセプトの画像のアニメーション
+.concept_img-1 {
+    transition: 1.2s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.concept_img-1.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.concept_img-2 {
+    transition: 0.6s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.concept_img-2.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.concept_img-3 {
+    transition: 1.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.concept_img-3.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.concept_img-4 {
+    transition: 1s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.concept_img-4.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.concept_splash {
+    transition: 0.8s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.concept_splash.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+
+//about vessiの文字が出てくるアニメーション
+.about-vessi {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.about-vessi.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+
+//---------------------------------------------
+//feature
+//featureのタイトル横から出る動き
+
+//featureが一つづつ出てくるアニメーション
+.featres li {
+    transition: 0.8s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.featres li.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+
+//---------------------------------------------
+//technology
+
+//technologyの要素が一つづつ出てくるアニメーション
+//文字
+.technologys-title {
+    transition: 0.8s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.technologys-title.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+//画像 PC版
+.pc-pnly__technology-img {
+    transition: 0.8s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.pc-pnly__technology-img.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+//画像 SP版
+.sp-pnly__technology-img {
+    transition: 0.8s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.sp-pnly__technology-img.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+
+
+//テキスト
+.technologys-text {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.technologys-text.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+
+
+//---------------------------------------------
+//products
+
+//1画面ずつ遷移するアニメーション
+
+//商品が出てくるアニメーション
+.products_items {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.products_items.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+
+//---------------------------------------------
+//sub
+
+//subページ reviewが出てくるアニメーション
+.review {
+    transition: 0.8s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.review.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+//subページ serviceが出てくるアニメーション
+.service {
+    transition: 1s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.service.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+//subページ faqが出てくるアニメーション
+.faq {
+    transition: 1.2s ease-in-out;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+.faq.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+//フッター水画像
+.sub___img___footer {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.sub___img___footer.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}

@@ -1,0 +1,209 @@
+@use './mixins' as *;
+
+footer {
+    padding-top: 64px;
+    background: var(--main);
+    color: #fff;
+    width: 100vw;
+    height: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.footer-main {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10rem;
+    margin-top: 60px;
+    align-items: flex-end;
+}
+
+.footer-top-return {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.yazirusi {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 48px;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+}
+
+.line01 {
+    height: 1px;
+    background-color: #fff;
+}
+
+.line02 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: right bottom;
+    width: 8px;
+    height: 1px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.footer-top-return a {
+    text-decoration: none;
+}
+
+.footer-top-return-text {
+    display: block;
+    padding-top: 40px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+}
+
+
+
+.footer-link {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links {
+    position: relative;
+}
+
+.footer-sns-link {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.footer-sns-link ul {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.footer-nav-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 24px;
+}
+
+.footer-nav-2 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+}
+
+.footer-logo {
+    margin-top: 48px;
+}
+
+.footer-copy {
+    font-weight: bold;
+    font-size: 11px;
+    padding-top: 40px;
+    letter-spacing: 0.1em;
+}
+
+
+.footer-links a:hover {
+    opacity: 0.5;
+}
+
+
+@media (max-width: 768px) {
+
+    footer {
+        padding-top: 40px;
+        width: 100vw;
+        height: 600px;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        padding: 0;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .footer-sns-link ul {
+        display: flex;
+        gap: 12px;
+        margin: 0 auto;
+    }
+
+    .footer-sns-link img {
+        width: 18px;
+        height: 18px;
+        margin-top: 16px;
+    }
+
+    .footer-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 16px;
+    }
+
+    .footer-nav-2 {
+        gap: 4px;
+        padding: 34px;
+        flex-direction: low;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .footer-logo {
+        display: flex;
+        margin: 0 auto;
+        width: 120px;
+        align-items: center;
+    }
+
+    .footer-copy {
+        display: block;
+        font-size: 9px;
+        padding-top: 40px;
+        letter-spacing: 0.1em;
+
+        margin: 0 auto;
+    }
+
+
+    
+}
